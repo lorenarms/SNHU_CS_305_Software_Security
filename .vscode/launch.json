@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Application",
+            "request": "launch",
+            "mainClass": "com.snhu.Module21.Application",
+            "projectName": "Module2.2"
+        },
+        {
+            "type": "java",
+            "name": "Launch DemooneApplication",
+            "request": "launch",
+            "mainClass": "com.newspring.demoone.DemooneApplication",
+            "projectName": "demoone"
+        },
+        {
+            "type": "java",
+            "name": "Launch DemothreeApplication",
+            "request": "launch",
+            "mainClass": "com.newspring.demothree.DemothreeApplication",
+            "projectName": "demothree"
+        },
+        {
+            "type": "java",
+            "name": "Launch DemotwoApplication",
+            "request": "launch",
+            "mainClass": "com.newspring.demotwo.DemotwoApplication",
+            "projectName": "demotwo"
+        },
+        {
+            "type": "java",
+            "name": "Launch PayrollApplication",
+            "request": "launch",
+            "mainClass": "com.RESTserver.demo.PayrollApplication",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Launch RestServiceApplication",
+            "request": "launch",
+            "mainClass": "com.twk.restservice.RestServiceApplication",
+            "projectName": "rest-service"
+        },
+        {
+            "type": "java",
+            "name": "Launch ServerApplication",
+            "request": "launch",
+            "mainClass": "com.snhu.sslserver.server.ServerApplication",
+            "projectName": "server"
+        },
+        {
+            "type": "java",
+            "name": "Launch SslServerApplication",
+            "request": "launch",
+            "mainClass": "com.snhu.sslserver.SslServerApplication",
+            "projectName": "ssl-server"
+        }
+    ]
+}

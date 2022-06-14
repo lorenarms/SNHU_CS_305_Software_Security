@@ -31,7 +31,7 @@ class ServerController	{
 		
 		// create instance of MessageDigest class
 		// use SHA256 for hashing of message
-		MessageDigest digest = MessageDigest.getInstance("SHA256");
+		MessageDigest digest = MessageDigest.getInstance("SHA512");
 		
 		// data to hash
 		String data = name;

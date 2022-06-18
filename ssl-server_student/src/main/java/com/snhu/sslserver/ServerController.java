@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class ServerController	{
 	
-	private static final String template = "Hello, %s";
+	private static final String template = "Hello, %s!";
 	private String data;
 	private MessageDigest digest;
 	
 	// RequestMapping allows for queries in the address bar
 	// /hash?name=Name
 	@RequestMapping("/hash")
-    public String myHash(@RequestParam(value = "name", defaultValue = "Lawrence Artl") String name) throws NoSuchAlgorithmException {
-		
-		// create instance of MessageDigest class
-		// use SHA512 for hashing of message
-		digest = MessageDigest.getInstance("SHA512");
+    public String myHash(@RequestParam(value = "name", 
+    	defaultValue = "Lawrence Artl") String name, 
+    	@RequestParam(value = "algorithm", defaultValue = "SHA-512") String algorithm) 
+    		throws NoSuchAlgorithmException {
 		
 		// data to hash
 		data = name;
@@ -27,8 +26,23 @@ class ServerController	{
 		// error handling
 		try {
 			
-			// send MessageDigest and data to checksum method
-			String hash = checksum(digest, data);
+			try {
+				
+				digest = MessageDigest.getInstance(algorithm);
+				
+			} catch (NoSuchAlgorithmException e) {
+					    		
+	    		return data + " hash failed. " + algorithm + " not available to use for hashing. "
+	    				+ "Perhaps it doesn't exist?" + "<p>" + e.getMessage();
+			}
+			
+			
+			// create new checksum object
+			Checksum chk = new Checksum();
+			
+			// send MessageDigest and data to appropriate checksum method
+			String hash = chk.checksum(digest, data);
+			chk = null;
 			
 			// return the data as a hash
 			return String.format(template, name) + "<p>" + 
@@ -37,37 +51,12 @@ class ServerController	{
 			
 		} catch (Exception e) {
 			
-			System.out.println("Cause: " + e.getCause().toString());
-    		e.printStackTrace();
-    		
+			return data + " hash failed, unknown error.<p>" + e.getMessage();
 		}
 		
-		return "Failed";
+		
 		
 	}
-	
-
-    
-	// private checksum method
-    private String checksum(MessageDigest digest, String data) {
-    	
-    	// turn the string into a byte array, digest to SHA512
-    	byte[] b = data.getBytes();
-    	digest.update(b);
-    	b = digest.digest();
-    	
-    	// create a new string builder object
-    	StringBuilder sb = new StringBuilder();
-    	
-    	// loop through byte array, convert decimal to hex, 
-    	// add to string builder object
-    	for (byte bytes : b) {
-            sb.append(String.format("%02X ", bytes));
-        }
-    	
-    	// return the stringbuilder object as a string
-    	return sb.toString();
-    	}
 	
 }
 

@@ -17,33 +17,43 @@ class DocController	{
 	
 	// RequestMapping allows for queries in the address bar
 	@RequestMapping("/doc")
-    public String docHash(@RequestParam(value = "name", defaultValue = "Business") String name) throws NoSuchAlgorithmException {
+    public String docHash(@RequestParam(value = "name", 
+	    defaultValue = "Business") String name) 
+	    throws NoSuchAlgorithmException {
 		
 		DocData doc = new DocData(counter.incrementAndGet(), name);
-		
-		// create instance of MessageDigest class
-		// use SHA512 for hashing of message
-		digest = MessageDigest.getInstance("SHA512");
 		
 		// error handling
 		try {
 			
-			// send MessageDigest and data to checksum method
-			String hash = doc.getChecksum(digest, doc);
-						
+			
+			
+			// create instance of MessageDigest class
+			// use SHA512 for hashing of message
+			digest = MessageDigest.getInstance("SHA512");
+			
+			// new checksum object
+			Checksum chk = new Checksum();
+			
+			// hash the doc object
+			String hash = chk.checksum(digest, doc);
+			chk = null;
+									
 			// return the data as a hash formatted for readability
 			return String.format(template, name) + "<p>" + 
 			"Document ID: " + doc.getId() + "<p>" + 
 			"Hashing Algorithm: " + digest.getAlgorithm() + "<p>" +
 			"Document CheckSum Value: " + hash;	
 			
+			
+			
+			
 		} catch (Exception e) {
 			
-			System.out.println("Cause: " + e.getCause().toString());
-    		e.printStackTrace();
+			return "Doc ID " + doc.getId() + " hashing failed.<p>" + e.getMessage();
     		
 		}
 		
-		return "Failed";
+		
 	}
 }

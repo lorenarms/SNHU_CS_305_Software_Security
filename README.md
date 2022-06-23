@@ -7,6 +7,14 @@
   <a href="https://github.com/lorenarms/SNHU_CS_305_Software_Security/tree/main/ssl-server_student/Documentation" target="_blank">here</a>.
                                                                                                                                
   </p>
+  The client, Artemis Financial, was looking to update the security of their application, serving their users with secure communications. The solution to this was to implement an https protocol for the website, as well as incorporating a hashing algorithm to hash the data that is sent back and forth from server to browser. For the former, the java keytool was used to create a keystore and certificate that the browser could use to access the website securely. To create the hash, a hashing method was written to take in data and return the hashed value to the browser for display.
+  <p>
+  <h3>Running the Application...</h3>
+  <p>
+  Within Eclipse (or the Java IDE of your choice), run the application, then navigate in a web browswer to https://localhost:8443. The various endpoints to explore are /hash, /doc, and /greeting. All three of these use the Spring framework to serve data to the user. All three endpoints also accept queries as strings. For example, /hash?name=your name will return "your name"'s hash value. /hash?algorithm=SHA256 will return the object's hash in SHA256 (the default is SHA512). 
+  </p>
+  
+  </p>
   <p>If you're interested, you can see more about my process in <a href="https://youtu.be/sMPwKmfkNI8" target="_blank">this video</a> about the final project, or check out my entire <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">YouTube channel</a> for more videos about coding projects I've done.
 <p>Also, please check out my <a href="http://artllj.com" target="_blank">Personal Website</a> for more information about me, and my <a href="https://www.linkedin.com/in/lorenarms95/" target="_blank">LinkedIn</a> to get additional information. </p>
 <h3>Thanks for stopping by!</h3>

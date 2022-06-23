@@ -3,8 +3,8 @@
   Southern New Hampshire University</h2>
   <p>
   Welcome to the repository for the various projects from my CS 305 Software Security class at SNHU Online! Feel free to browse my code and check out the
-  various applications that I developed during the semester. The culmination of my learning can be found in the Final Project <a href="https://github.com/lorenarms/SNHU_CS_305_Software_Security/tree/main/ssl-server_student" target="_blank">here</a>. For more information about the project, see the documentation
-  <a href="https://github.com/lorenarms/SNHU_CS_305_Software_Security/tree/main/ssl-server_student/Documentation" target="_blank">here</a>.
+  various applications that I developed during the semester. The culmination of my learning can be found in <a href="https://github.com/lorenarms/SNHU_CS_305_Software_Security/tree/main/ssl-server_student" target="_blank">the Final Project</a>. For more information about the project, see 
+  <a href="https://github.com/lorenarms/SNHU_CS_305_Software_Security/tree/main/ssl-server_student/Documentation" target="_blank">the documentation</a>.
                                                                                                                                
   </p>
   The client, Artemis Financial, was looking to update the security of their application, serving their users with secure communications. The solution to this was to implement an https protocol for the website, as well as incorporating a hashing algorithm to hash the data that is sent back and forth from server to browser. For the former, the java keytool was used to create a keystore and certificate that the browser could use to access the website securely. To create the hash, a hashing method was written to take in data and return the hashed value to the browser for display.
@@ -15,7 +15,7 @@
   </p>
   
   </p>
-  <p>If you're interested, you can see more about my process in <a href="https://youtu.be/sMPwKmfkNI8" target="_blank">this video</a> about the final project, or check out my entire <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">YouTube channel</a> for more videos about coding projects I've done.
+  <p>If you're interested, you can see more about my process in <a href="https://youtu.be/sMPwKmfkNI8" target="_blank">this video</a> about the final project, or check out <a href="https://www.youtube.com/channel/UCGtp8PRHgPCQHYoSxbMST8A" target="_blank">my entire YouTube channel</a> for more videos about coding projects I've done.
 <p>Also, please check out my <a href="http://artllj.com" target="_blank">Personal Website</a> for more information about me, and my <a href="https://www.linkedin.com/in/lorenarms95/" target="_blank">LinkedIn</a> to get additional information. </p>
 <h3>Thanks for stopping by!</h3>
 <img src="https://media-exp2.licdn.com/dms/image/C5603AQEqU5vuSjmWrg/profile-displayphoto-shrink_400_400/0/1641574403621?e=1660780800&v=beta&t=hukMeE3aKt4d6lyocOdHmZmJ16QC0bWLUaaT2d_m5Gk" atl="[picture of me]" style="width:100px;height:100px;">
